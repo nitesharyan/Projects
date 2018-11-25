@@ -1,0 +1,127 @@
+
+\documentclass[a4paper,12pt,twoside]{report} % 12pt: main font size
+\usepackage[a4paper, total={6in, 8in}, inner=1.3in,outer=1in]{geometry}
+
+% font family: Times Roman
+\usepackage{newtxtext,newtxmath} % or: mathptmx
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % important if your docs contain special characters
+
+% size and weight of font to be used in section headers
+\usepackage{sectsty}
+\sectionfont{\large\bfseries} 
+\subsectionfont{\normalsize\bfseries}
+
+% line spacing
+\usepackage[nodisplayskipstretch]{setspace}
+\setstretch{1.5} % or:  \onehalfspacing -- opinions vary...
+
+% If you use the table and figure environments along with
+% \caption commands, the floats will be numbered automatically
+\usepackage{lipsum} % filler text
+
+
+%---------------------------------
+%    PACKAGES INCLUDED
+%---------------------------------
+
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{epstopdf}  
+\usepackage{caption}
+\usepackage[printwatermark]{xwatermark}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{listings}             % Include the listings-package
+\usepackage[toc,page]{appendix}
+
+\usepackage{titlesec}
+ 
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge}
+
+\setcounter{secnumdepth}{3}
+
+%---------------------------------
+%    DOCUMENT BEGINS
+%---------------------------------
+
+\begin{document} \onehalfspacing
+
+%\begin{itemize}
+%  \item Left Margin \textemdash 1.3 inch
+%  \item Right Margin \textemdash 1.0 inch
+%  \item Top Margin \textemdash 1 inch
+%  \item Bottom Margin \textemdash 1 inch
+%  \item Font \textemdash Times New Roman
+%  \item All main headings uppercase 14 (Bold)
+%  \item All Sub main headings uppercase 12 (Bold)
+%  \item Matter 12 (Regular)
+%  \item Line Spacing \textemdash 1.5
+%  \item Paragraph Spacing \textemdash 1.5
+%  \item Each table and figure should be numbered
+%\end{itemize}
+
+
+%---------------------------------
+%    FRONT MATTER
+%---------------------------------
+
+\include{CoverPage/CoverPage}
+\include{Dedication/Dedication}
+\include{Certificates/Certificate}
+\include{Acknowledgement/Acknowledgement}
+
+\pagenumbering{roman}
+
+\include{Abstract/abstract}
+
+\tableofcontents
+
+%\listoftables
+
+%---------------------------------
+%	THESIS CONTENT - CHAPTERS
+%---------------------------------
+
+
+\pagenumbering{arabic}
+
+\newwatermark[allpages,color=red!20,angle=45,scale=1.4,xpos=0,ypos=0]{NIT, Durgapur - 713209}
+
+\include{Chapter1/Introduction}
+\include{Implementation/Implementation}
+%\include{Chapter2/Related_Work}
+%\include{Chapter3/Experimental_Setup}
+%\include{Chapter4/C3-Index}
+%\include{Chapter5/LAoBD}
+%\include{Chapter6/Citation_Anamolies}
+%\include{Chapter7/Reviewer_Assignment}
+%\include{Conclusion/Conclusion}
+
+
+%---------------------------------
+%	THESIS CONTENT - APPENDICES
+%---------------------------------
+
+%\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+%---------------------------------
+%	BIBLIOGRAPHY
+%---------------------------------
+
+\bibliographystyle{unsrt}
+\bibliography{Bibliography}  %%%% ENTER FILENAME OF BIB FILE INSIDE THE CURLY BRACKETS
+
+%\include{Bibliography/Publications}
+
+\end{document}
+
+%---------------------------------
+%    THE END
+%---------------------------------
